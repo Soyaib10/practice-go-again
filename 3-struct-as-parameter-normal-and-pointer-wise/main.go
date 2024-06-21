@@ -10,7 +10,7 @@ type Car struct {
 	Color string
 }
 
-// Print car by value 
+// Print car by value
 func printCarDetailsByValue(c Car) {
 	fmt.Printf("Make: %s, Model: %s, Year: %d, Color: %s\n", c.Make, c.Model, c.Year, c.Color)
 }
@@ -20,14 +20,12 @@ func printCarDetailsByReference(c *Car) {
 	fmt.Printf("Make: %s, Model: %s, Year: %d, Color: %s\n", c.Make, c.Model, c.Year, c.Color)
 }
 
-// give a new color 
+// give a new color
 func repaintCar(c *Car, newColor string) {
 	c.Color = newColor
 }
 
 func main() {
-	
-
 
 	car := Car{
 		Make:  "Tesla",
@@ -40,23 +38,23 @@ func main() {
 	var year int
 
 	// Get user input for the Car details
-    fmt.Print("Enter the make of the car: ")
-    fmt.Scanln(&make)
+	fmt.Print("Enter the make of the car: ")
+	fmt.Scanln(&make)
 
-    fmt.Print("Enter the model of the car: ")
-    fmt.Scanln(&model)
+	fmt.Print("Enter the model of the car: ")
+	fmt.Scanln(&model)
 
-    fmt.Print("Enter the year of the car: ")
-    fmt.Scanln(&year)
+	fmt.Print("Enter the year of the car: ")
+	fmt.Scanln(&year)
 
-    fmt.Print("Enter the color of the car: ")
-    fmt.Scanln(&color)
+	fmt.Print("Enter the color of the car: ")
+	fmt.Scanln(&color)
 
 	// making Car instance
 	carDynamic := Car{
-		Make: make,
+		Make:  make,
 		Model: model,
-		Year: year,
+		Year:  year,
 		Color: color,
 	}
 
@@ -68,8 +66,8 @@ func main() {
 	// Dynamic input using carDynamic- an instance of Car struct
 	printCarDetailsByReference(&carDynamic)
 	var newColor string
-    fmt.Print("Enter a new color for the car: ")
-    fmt.Scanln(&newColor)
-    repaintCar(&car, newColor)
+	fmt.Print("Enter a new color for the car: ")
+	fmt.Scanln(&newColor)
+	repaintCar(&car, newColor)
 
 }

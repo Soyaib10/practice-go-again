@@ -22,9 +22,9 @@ func (lib *Library) RegisterUser(user users.User) {
 
 func (lib *Library) LendBook(bookID int, userID int) error {
 	var bookIndex int
-    var userIndex int
-    var bookFound bool
-    var userFound bool
+	var userIndex int
+	var bookFound bool
+	var userFound bool
 
 	for i, book := range lib.Books {
 		if book.ID == bookID {
@@ -47,8 +47,8 @@ func (lib *Library) LendBook(bookID int, userID int) error {
 	}
 
 	if !userFound {
-        return fmt.Errorf("user not found")
-    }
+		return fmt.Errorf("user not found")
+	}
 
 	if lib.Books[bookIndex].Status == "Lent" {
 		return fmt.Errorf("book is already lent")
@@ -67,13 +67,12 @@ func (lib *Library) DisplayBooks() {
 }
 
 func (lib *Library) DisplayUsers() {
-    fmt.Println("Registered Users:")
-    for _, user := range lib.Users {
-        fmt.Printf("ID: %d, Name: %s, Email: %s\n", user.ID, user.Name, user.Email)
-        fmt.Println("Borrowed Books:")
-        for _, book := range user.Books {
-            fmt.Printf("    ID: %d, Title: %s, Author: %s\n", book.ID, book.Title, book.Author)
-        }
-    }
+	fmt.Println("Registered Users:")
+	for _, user := range lib.Users {
+		fmt.Printf("ID: %d, Name: %s, Email: %s\n", user.ID, user.Name, user.Email)
+		fmt.Println("Borrowed Books:")
+		for _, book := range user.Books {
+			fmt.Printf("    ID: %d, Title: %s, Author: %s\n", book.ID, book.Title, book.Author)
+		}
+	}
 }
-

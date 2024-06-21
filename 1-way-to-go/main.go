@@ -39,8 +39,8 @@ func (a Address) Greet() string {
 
 func constructorsInGo(name string, age int, email string) *Person {
 	return &Person{
-		Name: name,
-		Age: age,
+		Name:  name,
+		Age:   age,
 		Email: email,
 	}
 }
@@ -88,8 +88,8 @@ func main() {
 
 	newAddress := Address{
 		Street: "ami jani na",
-		City: "taw jani na",
-		State: "bollam na jani na",
+		City:   "taw jani na",
+		State:  "bollam na jani na",
 	}
 
 	fmt.Println(person.Name)
@@ -101,14 +101,9 @@ func main() {
 
 	// method overloading
 	fmt.Println(newAddress.Greet()) // from Address struct
-	fmt.Println(newPerson.Greet()) // from PersonPerson struct
+	fmt.Println(newPerson.Greet())  // from PersonPerson struct
 
 	// object for constructorsInGo
 	constructorsInGoObject := constructorsInGo("alice", 22, "af@mail.com")
 	fmt.Println(constructorsInGoObject.Age)
 }
-
-
-
-
-
