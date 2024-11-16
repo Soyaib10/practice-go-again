@@ -58,9 +58,9 @@ func main() {
 		Color: color,
 	}
 
-	printCarDetailsByValue(car)
-	printCarDetailsByReference(&car)
-	repaintCar(&car, "Black")
+	printCarDetailsByValue(car) // call by value
+	printCarDetailsByReference(&car) // call by address
+	repaintCar(&car, "Black") // call by address
 	printCarDetailsByReference(&car)
 
 	// Dynamic input using carDynamic- an instance of Car struct
